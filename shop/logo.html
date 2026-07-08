@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>星辰塔罗馆 · Logo</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0a0a12;
+    display: flex; align-items: center; justify-content: center;
+    min-height: 100vh;
+    flex-direction: column; gap: 3rem;
+    font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  }
+
+  /* ====== 主 Logo（方形适合头像/App图标） ====== */
+  .logo-square {
+    width: 400px; height: 400px;
+    background: linear-gradient(150deg, #0e0820, #1a1040, #0e0820);
+    border: 3px solid rgba(212,165,116,0.4);
+    border-radius: 32px;
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 80px rgba(120,80,200,0.15), 0 0 30px rgba(212,165,116,0.08);
+  }
+  .logo-square::before {
+    content: '';
+    position: absolute; top: -60%; left: -60%;
+    width: 220%; height: 220%;
+    background: radial-gradient(circle at 35% 35%, rgba(140,100,220,0.12) 0%, transparent 50%),
+                radial-gradient(circle at 65% 65%, rgba(212,165,116,0.08) 0%, transparent 50%);
+  }
+  .logo-square .stars-bg {
+    position: absolute; inset: 0;
+    background-image:
+      radial-gradient(1px 1px at 20% 30%, rgba(255,255,255,0.5), transparent),
+      radial-gradient(1px 1px at 70% 20%, rgba(255,255,255,0.4), transparent),
+      radial-gradient(1.5px 1.5px at 50% 60%, rgba(255,255,255,0.6), transparent),
+      radial-gradient(1px 1px at 30% 75%, rgba(255,255,255,0.3), transparent),
+      radial-gradient(1px 1px at 80% 50%, rgba(255,255,255,0.5), transparent),
+      radial-gradient(1px 1px at 60% 85%, rgba(255,255,255,0.4), transparent),
+      radial-gradient(1.5px 1.5px at 15% 50%, rgba(255,255,255,0.5), transparent),
+      radial-gradient(1px 1px at 90% 15%, rgba(255,255,255,0.3), transparent);
+  }
+
+  .logo-icon {
+    position: relative; z-index: 1;
+    font-size: 5rem;
+    margin-bottom: 0.5rem;
+    animation: glow 3s ease-in-out infinite;
+  }
+  @keyframes glow {
+    0%, 100% { filter: drop-shadow(0 0 8px rgba(212,165,116,0.3)); }
+    50%      { filter: drop-shadow(0 0 20px rgba(212,165,116,0.6)); }
+  }
+
+  .logo-text {
+    position: relative; z-index: 1;
+    font-size: 2.2rem;
+    font-weight: 300;
+    letter-spacing: 0.25em;
+    background: linear-gradient(180deg, #d4a574 0%, #c9b8e4 50%, #d4a574 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .logo-sub {
+    position: relative; z-index: 1;
+    font-size: 0.7rem;
+    color: rgba(200,180,160,0.4);
+    letter-spacing: 0.4em;
+    margin-top: 0.4rem;
+  }
+
+  /* ====== 横向 Logo（适合横幅/海报） ====== */
+  .logo-horizontal {
+    width: 700px; height: 180px;
+    background: linear-gradient(135deg, #0e0820, #1a1040, #0e0820);
+    border: 2px solid rgba(212,165,116,0.3);
+    border-radius: 20px;
+    display: flex; align-items: center; gap: 2rem;
+    padding: 0 3rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 60px rgba(120,80,200,0.12);
+  }
+  .logo-horizontal::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 20% 50%, rgba(140,100,220,0.1) 0%, transparent 60%);
+  }
+  .logo-horizontal .logo-icon { font-size: 4rem; margin: 0; }
+  .logo-horizontal .logo-text { font-size: 2rem; }
+  .logo-horizontal .logo-sub  { font-size: 0.65rem; }
+
+  .logo-text-group {
+    position: relative; z-index: 1;
+    display: flex; flex-direction: column;
+  }
+
+  /* 提示文字 */
+  .hint {
+    color: rgba(200,180,160,0.3);
+    font-size: 0.75rem; letter-spacing: 0.1em;
+  }
+  .btn-download {
+    display: block; margin: 1.5rem auto;
+    padding: 0.6rem 2rem;
+    background: rgba(212,165,116,0.15);
+    border: 1px solid rgba(212,165,116,0.4);
+    border-radius: 50px;
+    color: #d4a574; font-size: 0.85rem;
+    font-family: inherit; cursor: pointer;
+    letter-spacing: 0.1em; transition: all 0.3s;
+  }
+  .btn-download:hover {
+    background: rgba(212,165,116,0.25);
+    box-shadow: 0 0 20px rgba(212,165,116,0.2);
+  }
+</style>
+</head>
+<body>
+
+<p class="hint">▼ 方形 Logo（头像 / App 图标）<br><button class="btn-download" onclick="downloadPNG('.logo-square','logo-square')">📥 下载此 Logo</button></p>
+<div class="logo-square">
+  <div class="stars-bg"></div>
+  <div class="logo-icon">🔮</div>
+  <div class="logo-text">星辰塔罗馆</div>
+  <div class="logo-sub">STELLAR TAROT</div>
+</div>
+
+<p class="hint">▼ 横向 Logo（横幅 / 海报用）<br><button class="btn-download" onclick="downloadPNG('.logo-horizontal','logo-horizontal')">📥 下载此 Logo</button></p>
+<div class="logo-horizontal">
+  <div class="logo-icon">🔮</div>
+  <div class="logo-text-group">
+    <div class="logo-text">星辰塔罗馆</div>
+    <div class="logo-sub">STELLAR TAROT · 映照你内心的星空</div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script>
+function downloadPNG(selector, filename) {
+  const el = document.querySelector(selector);
+  html2canvas(el, { backgroundColor: '#0a0a12', scale: 2 }).then(canvas => {
+    const a = document.createElement('a');
+    a.href = canvas.toDataURL('image/png');
+    a.download = filename + '.png';
+    a.click();
+  });
+}
+</script>
+</body>
+</html>

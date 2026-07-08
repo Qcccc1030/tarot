@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>🔮 星辰塔罗馆</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="stars"></canvas>
+
+<div class="app">
+
+  <!-- ═══════ 阶段1：选择牌阵 ═══════ -->
+  <section id="stage-select" class="stage active">
+    <div class="panel">
+      <h1 class="title">星辰塔罗馆</h1>
+      <p class="subtitle">静心凝神，选择你的牌阵</p>
+
+      <div class="spread-options">
+        <button class="spread-btn" data-spread="single">
+          <span class="spread-icon">✦</span>
+          <span class="spread-name">单张指引</span>
+          <span class="spread-desc">今日运势 · 一张牌的力量</span>
+        </button>
+        <button class="spread-btn featured-spread" data-spread="three">
+          <span class="spread-tag">推荐</span>
+          <span class="spread-icon">✦ ✦ ✦</span>
+          <span class="spread-name">三牌阵</span>
+          <span class="spread-desc">过去 · 现在 · 未来</span>
+        </button>
+        <button class="spread-btn" data-spread="celticCross">
+          <span class="spread-icon">✧</span>
+          <span class="spread-name">凯尔特十字阵</span>
+          <span class="spread-desc">十张牌深度解读</span>
+        </button>
+      </div>
+
+      <button class="btn-daily" id="btn-daily">🌅 今日运势 · 每日一牌</button>
+
+      <p class="disclaimer">⚠️ 塔罗占卜仅供参考，人生的选择权始终在你手中</p>
+    </div>
+  </section>
+
+  <!-- ═══════ 阶段2：选牌 ═══════ -->
+  <section id="stage-draw" class="stage">
+    <div class="draw-panel">
+      <div class="draw-header">
+        <button class="btn-back" id="btn-back" title="返回">← 返回</button>
+        <h2 class="stage-title" id="draw-title"></h2>
+        <p class="stage-hint">跟随直觉，选择 <strong id="draw-need"></strong> 张牌 · 或摇一摇盲抽</p>
+        <div class="quick-input">
+          <input type="text" id="input-numbers" placeholder="输入编号选牌">
+          <button class="btn-pick" id="btn-pick">快速选牌</button>
+          <button class="btn-pick btn-shake" id="btn-shake">🎲 随机盲抽</button>
+        </div>
+        <div class="draw-counter">
+          已选：<span id="draw-picked">0</span> / <span id="draw-total">0</span>
+        </div>
+        <button class="btn-reveal" id="btn-reveal" disabled>翻牌揭晓</button>
+      </div>
+      <div class="deck-grid" id="deck-grid"></div>
+    </div>
+  </section>
+
+  <!-- ═══════ 阶段3：解读结果 ═══════ -->
+  <section id="stage-result" class="stage">
+    <div class="panel result-panel" id="result-panel">
+      <h2 class="stage-title">📜 解读结果</h2>
+      <div id="result-content"></div>
+
+      <!-- 分享按钮 -->
+      <div class="share-area">
+        <button class="btn-share" id="btn-share">📤 生成分享卡片</button>
+      </div>
+
+      <button class="btn-restart" id="btn-restart">重新占卜</button>
+    </div>
+  </section>
+
+  <!-- ═══════ 分享卡片弹窗 ═══════ -->
+  <div class="modal-overlay" id="modal-share">
+    <div class="modal-box">
+      <h3>📤 你的运势卡片</h3>
+      <div class="share-card" id="share-card">
+        <div class="sc-header">🔮 星辰塔罗馆</div>
+        <div class="sc-result" id="sc-result"></div>
+        <div class="sc-qr">
+          <img id="sc-qr-img" src="" alt="扫码访问">
+          <div class="sc-url" id="sc-url">扫码体验你的今日运势</div>
+        </div>
+        <div class="sc-footer">长按保存卡片 · 分享给朋友</div>
+      </div>
+      <div class="modal-actions">
+        <button class="btn-download-card" id="btn-download-card">📥 保存图片</button>
+        <button class="btn-close-modal" id="btn-close-modal">关闭</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script src="tarot-data.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

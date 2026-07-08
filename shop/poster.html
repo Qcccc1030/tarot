@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>星辰塔罗馆 · 宣传海报</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #111;
+    display: flex; align-items: center; justify-content: center;
+    min-height: 100vh;
+    font-family: 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
+  }
+
+  .poster {
+    width: 600px;
+    min-height: 900px;
+    background: linear-gradient(180deg, #0a0820 0%, #0e0c2a 20%, #141035 40%, #100b2e 60%, #0a0820 100%);
+    position: relative;
+    overflow: hidden;
+    padding: 3.5rem 3rem;
+    display: flex; flex-direction: column;
+    box-shadow: 0 0 80px rgba(100,60,180,0.2);
+  }
+
+  /* 星空 */
+  .poster-stars {
+    position: absolute; inset: 0; pointer-events: none;
+  }
+  .poster-stars span {
+    position: absolute;
+    border-radius: 50%;
+    background: #fff;
+    animation: twinkle var(--d) ease-in-out infinite;
+    animation-delay: var(--delay);
+    opacity: 0;
+    width: var(--size); height: var(--size);
+  }
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.2; }
+    50%      { opacity: 0.9; }
+  }
+
+  /* 光晕 */
+  .poster::before {
+    content: '';
+    position: absolute;
+    width: 500px; height: 500px;
+    border-radius: 50%;
+    filter: blur(150px);
+    opacity: 0.1;
+    background: radial-gradient(circle, #7b3fff, transparent);
+    top: -150px; left: -100px;
+  }
+  .poster::after {
+    content: '';
+    position: absolute;
+    width: 400px; height: 400px;
+    border-radius: 50%;
+    filter: blur(130px);
+    opacity: 0.08;
+    background: radial-gradient(circle, #d4a574, transparent);
+    bottom: -100px; right: -80px;
+  }
+
+  /* 顶部分隔 */
+  .top-line {
+    width: 100%; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(212,165,116,0.4), transparent);
+    margin-bottom: 2rem;
+    position: relative; z-index: 1;
+  }
+
+  /* Logo 区 */
+  .logo-area {
+    text-align: center; position: relative; z-index: 1;
+    margin-bottom: 2rem;
+  }
+  .logo-area .icon {
+    font-size: 3.5rem;
+    filter: drop-shadow(0 0 15px rgba(200,160,100,0.3));
+  }
+  .logo-area .name {
+    font-size: 2.5rem; font-weight: 300;
+    letter-spacing: 0.3em;
+    background: linear-gradient(180deg, #d4a574, #c9b8e4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0.5rem 0;
+  }
+  .logo-area .tagline {
+    font-size: 0.8rem; color: rgba(200,180,160,0.5);
+    letter-spacing: 0.4em;
+  }
+
+  /* 分割线 */
+  .divider {
+    width: 80px; height: 1px;
+    margin: 2rem auto;
+    background: linear-gradient(90deg, transparent, rgba(180,150,220,0.5), transparent);
+    position: relative; z-index: 1;
+  }
+
+  /* 服务列表 */
+  .services {
+    position: relative; z-index: 1;
+    text-align: center;
+  }
+  .services h3 {
+    font-size: 1rem; color: #c9b8e4;
+    letter-spacing: 0.3em; font-weight: 400;
+    margin-bottom: 1.5rem;
+  }
+  .service-item {
+    display: flex; justify-content: space-between;
+    padding: 0.8rem 1.5rem;
+    margin: 0 auto 0.4rem;
+    max-width: 420px;
+    border-bottom: 1px solid rgba(180,150,220,0.1);
+    font-size: 0.95rem;
+  }
+  .service-item .s-name { color: #d4a574; letter-spacing: 0.1em; }
+  .service-item .s-desc { color: rgba(200,180,160,0.5); font-size: 0.8rem; }
+
+  /* 亮点 */
+  .highlights {
+    position: relative; z-index: 1;
+    text-align: center; margin-top: 2rem;
+  }
+  .highlights h3 {
+    font-size: 1rem; color: #c9b8e4;
+    letter-spacing: 0.3em; font-weight: 400;
+    margin-bottom: 1rem;
+  }
+  .highlight-grid {
+    display: grid; grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem; max-width: 450px; margin: 0 auto;
+  }
+  .highlight-item {
+    padding: 1rem 0.5rem;
+    border: 1px solid rgba(180,150,220,0.15);
+    border-radius: 12px;
+    font-size: 0.8rem;
+    color: rgba(200,180,160,0.6);
+    letter-spacing: 0.08em;
+  }
+  .highlight-item .hi-icon { font-size: 1.5rem; display: block; margin-bottom: 0.4rem; }
+
+  /* 底部 */
+  .footer {
+    position: relative; z-index: 1;
+    margin-top: auto; text-align: center;
+    padding-top: 2rem;
+  }
+  .footer p {
+    font-size: 0.75rem; color: rgba(200,180,160,0.4);
+    letter-spacing: 0.15em; line-height: 1.8;
+  }
+  .footer .contact {
+    color: rgba(200,180,160,0.55);
+    font-size: 0.9rem;
+  }
+  .btn-download {
+    display: block; margin: 1.5rem auto 0;
+    padding: 0.6rem 2rem;
+    background: rgba(212,165,116,0.15);
+    border: 1px solid rgba(212,165,116,0.4);
+    border-radius: 50px;
+    color: #d4a574; font-size: 0.85rem;
+    font-family: inherit; cursor: pointer;
+    letter-spacing: 0.1em; transition: all 0.3s;
+  }
+  .btn-download:hover {
+    background: rgba(212,165,116,0.25);
+    box-shadow: 0 0 20px rgba(212,165,116,0.2);
+  }
+</style>
+</head>
+<body>
+
+<button class="btn-download" onclick="downloadPNG('.poster','星辰塔罗馆-宣传海报')" style="margin-bottom:1rem;">📥 下载海报 PNG</button>
+<div class="poster">
+
+  <!-- 星空 -->
+  <div class="poster-stars" id="poster-stars"></div>
+
+  <div class="top-line"></div>
+
+  <!-- Logo -->
+  <div class="logo-area">
+    <div class="icon">🔮</div>
+    <div class="name">星辰塔罗馆</div>
+    <div class="tagline">STELLAR TAROT · 映照你内心的星空</div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 服务 -->
+  <div class="services">
+    <h3>✦ 占 卜 服 务 ✦</h3>
+    <div class="service-item">
+      <span class="s-name">单张指引</span>
+      <span class="s-desc">当下的力量 · 每日一牌</span>
+    </div>
+    <div class="service-item">
+      <span class="s-name">三牌阵</span>
+      <span class="s-desc">过去·现在·未来 · 时间线解读</span>
+    </div>
+    <div class="service-item">
+      <span class="s-name">凯尔特十字阵</span>
+      <span class="s-desc">十张牌深度剖析 · 全方位解析</span>
+    </div>
+  </div>
+
+  <!-- 亮点 -->
+  <div class="highlights">
+    <h3>✦ 选 择 我 们 ✦</h3>
+    <div class="highlight-grid">
+      <div class="highlight-item">
+        <span class="hi-icon">🎴</span>
+        78 张全牌库<br>自主选牌
+      </div>
+      <div class="highlight-item">
+        <span class="hi-icon">📜</span>
+        正逆位<br>完整解读
+      </div>
+      <div class="highlight-item">
+        <span class="hi-icon">🌟</span>
+        综合分析<br>现状·建议·展望
+      </div>
+    </div>
+  </div>
+
+  <!-- 底部联系方式 -->
+  <div class="footer">
+    <p>让塔罗的星光 · 为你照亮前路</p>
+  </div>
+
+</div>
+
+<script>
+// 生成随机星星
+(function() {
+  const container = document.getElementById('poster-stars');
+  for (let i = 0; i < 80; i++) {
+    const star = document.createElement('span');
+    const size = Math.random() * 2 + 1;
+    star.style.cssText = `
+      --size: ${size}px;
+      --d: ${Math.random() * 3 + 2}s;
+      --delay: ${Math.random() * 5}s;
+      top: ${Math.random() * 100}%;
+      left: ${Math.random() * 100}%;
+    `;
+    container.appendChild(star);
+  }
+})();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script>
+function downloadPNG(selector, filename) {
+  const el = document.querySelector(selector);
+  html2canvas(el, { backgroundColor: null, scale: 2 }).then(canvas => {
+    const a = document.createElement('a');
+    a.href = canvas.toDataURL('image/png');
+    a.download = filename + '.png';
+    a.click();
+  });
+}
+</script>
+
+</body>
+</html>
