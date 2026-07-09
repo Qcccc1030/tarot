@@ -92,31 +92,6 @@ const safeOn = (id, event, fn) => {
 safeOn('btn-daily', 'click', startDailyFortune);
 safeOn('btn-shake', 'click', blindDraw);
 
-// 计数器：线上用不蒜子，本地用 localStorage
-(function initCounter() {
-  const el = document.getElementById('visit-count');
-  const bsEl = document.getElementById('busuanzi_value_site_pv');
-  if (!el) return;
-  // 定时检测不蒜子是否加载
-  let checked = 0;
-  const check = setInterval(() => {
-    checked++;
-    if (bsEl && bsEl.textContent && !isNaN(parseInt(bsEl.textContent)) && parseInt(bsEl.textContent) > 0) {
-      el.textContent = bsEl.textContent;
-      clearInterval(check);
-      return;
-    }
-    if (checked >= 8) { // 4 秒后放弃
-      clearInterval(check);
-      const key = 'tarot_local_count';
-      let c = parseInt(localStorage.getItem(key)) || 128;
-      const today = new Date().toDateString();
-      const last = localStorage.getItem('tarot_local_date');
-      if (last !== today) { c++; localStorage.setItem(key, c); localStorage.setItem('tarot_local_date', today); }
-      el.textContent = c;
-    }
-  }, 500);
-})();
 safeOn('btn-share', 'click', openShareCard);
 safeOn('btn-download-card', 'click', downloadShareCard);
 safeOn('btn-close-modal', 'click', () => {
