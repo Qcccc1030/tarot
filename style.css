@@ -379,12 +379,13 @@ body {
   background: linear-gradient(90deg, transparent, rgba(180,150,220,0.3), transparent);
   z-index: 2;
 }
-/* 大符号图标 */
+/* 大符号图标 - 卡面核心视觉 */
 .deck-card-icon {
-  font-size: 1.6rem;
-  padding-top: 0.3rem;
-  filter: drop-shadow(0 0 4px rgba(200,160,100,0.3));
+  font-size: 2rem;
+  padding-top: 0.2rem;
+  filter: drop-shadow(0 0 6px rgba(200,160,100,0.4));
   position: relative; z-index: 1;
+  line-height: 1;
 }
 /* 类型标签 */
 .deck-card-badge {
@@ -474,8 +475,8 @@ body {
 }
 .card-result-mini.reversed-card { transform: rotate(180deg); }
 .crm-icon {
-  font-size: 1.5rem;
-  filter: drop-shadow(0 0 4px rgba(200,160,100,0.3));
+  font-size: 1.8rem;
+  filter: drop-shadow(0 0 6px rgba(200,160,100,0.4));
 }
 .crm-tag {
   font-size: 0.45rem;

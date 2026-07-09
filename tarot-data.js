@@ -2,7 +2,7 @@
 const TAROT_DECK = [
   // ==================== 大阿尔卡纳 (22张) ====================
   {
-    id: 0, nameCn: '愚人', nameEn: 'The Fool', type: 'major', symbol: '🌟',
+    id: 0, nameCn: '愚人', nameEn: 'The Fool', type: 'major', symbol: '🌄',
     upright: '新的开始、冒险精神、无限可能、天真率性、自由自在。你正站在一段全新旅程的起点，放下顾虑，勇敢迈出第一步。',
     reversed: '鲁莽冲动、犹豫不决、缺乏方向、逃避现实。你可能在逃避某个重要决定，或因为过于冲动而忽略了隐藏的风险。',
     keywords: ['开始', '自由', '冒险', '天真']
@@ -44,7 +44,7 @@ const TAROT_DECK = [
     keywords: ['爱情', '选择', '和谐', '结合']
   },
   {
-    id: 7, nameCn: '战车', nameEn: 'The Chariot', type: 'major', symbol: '⚔️',
+    id: 7, nameCn: '战车', nameEn: 'The Chariot', type: 'major', symbol: '🏆',
     upright: '胜利、意志力、突破阻碍、掌控方向、向前迈进。凭借坚定的决心和强大的自控力，你将战胜一切困难，驶向成功的彼岸。',
     reversed: '失控、挫败、方向迷失、内心冲突。你可能感到事情正在脱离掌控，或过于好胜导致身心俱疲，需要停下来重新校准方向。',
     keywords: ['胜利', '意志', '突破', '前进']
@@ -62,7 +62,7 @@ const TAROT_DECK = [
     keywords: ['内省', '智慧', '独处', '探索']
   },
   {
-    id: 10, nameCn: '命运之轮', nameEn: 'Wheel of Fortune', type: 'major', symbol: '🎡',
+    id: 10, nameCn: '命运之轮', nameEn: 'Wheel of Fortune', type: 'major', symbol: '🔮',
     upright: '命运转折、机遇、循环、运势上升、顺应变化。幸运之轮正在转动，把握当下的契机，顺势而为，迎接即将到来的转机。',
     reversed: '厄运、抵抗变化、轮回停滞、失控的变数。你可能正面临一段低谷期，但记住命运之轮不会永远停在底部，保持信心。',
     keywords: ['命运', '转折', '机遇', '循环']
@@ -80,19 +80,19 @@ const TAROT_DECK = [
     keywords: ['牺牲', '暂停', '视角', '领悟']
   },
   {
-    id: 13, nameCn: '死神', nameEn: 'Death', type: 'major', symbol: '🦋',
+    id: 13, nameCn: '死神', nameEn: 'Death', type: 'major', symbol: '💀',
     upright: '结束、转变、重生、净化、放下过去。一个旧阶段终将落幕，为新的可能腾出空间。这并非终结，而是一场深刻的蜕变。',
     reversed: '抗拒改变、恐惧失去、停滞、消极等待。死死抓住即将终结的事物只会带来痛苦，与其抗拒，不如放手让生命自然流转。',
     keywords: ['结束', '转变', '重生', '放下']
   },
   {
-    id: 14, nameCn: '节制', nameEn: 'Temperance', type: 'major', symbol: '🌊',
+    id: 14, nameCn: '节制', nameEn: 'Temperance', type: 'major', symbol: '🏺',
     upright: '调和、中庸、耐心、融合、疗愈。找到生活的平衡点，将不同的元素调和为和谐的乐章，让身心回归平静与从容。',
     reversed: '失衡、过度放纵、缺乏节制、急躁。你可能在某方面走入了极端，需要重新找回中道，避免过度消耗自己的身体和精神。',
     keywords: ['平衡', '调和', '耐心', '疗愈']
   },
   {
-    id: 15, nameCn: '恶魔', nameEn: 'The Devil', type: 'major', symbol: '🔗',
+    id: 15, nameCn: '恶魔', nameEn: 'The Devil', type: 'major', symbol: '⛓️',
     upright: '束缚、欲望、物质主义、执念、阴暗面。看清是什么在困住你——是外部的枷锁，还是你甘愿被束缚的心？觉察即是解脱的开始。',
     reversed: '挣脱束缚、觉醒、找回力量、戒除成瘾。你开始意识到自己被什么限制了，并且愿意打破枷锁，重新掌控自己的人生。',
     keywords: ['束缚', '欲望', '执念', '觉醒']
