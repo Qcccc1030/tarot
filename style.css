@@ -61,6 +61,11 @@ body {
   letter-spacing: 0.2em;
   margin-bottom: 1rem;
 }
+.visitor-badge {
+  font-size: 0.75rem; color: rgba(200,170,180,0.35);
+  letter-spacing: 0.08em; margin-bottom: 1.8rem;
+}
+.visitor-badge span { color: rgba(212,165,116,0.6); font-weight: 500; }
 .btn-demo {
   display: block; margin: 0 auto 2rem;
   padding: 0.5rem 1.6rem;
@@ -264,20 +269,44 @@ body {
 
 /* 牌库卡背 */
 .deck-card-back {
-  background: linear-gradient(135deg, #1a1040, #2d1754);
-  border: 1px solid rgba(180, 150, 220, 0.25);
+  background: linear-gradient(135deg, #130830 0%, #1e1050 30%, #281860 60%, #130830 100%);
+  border: 1px solid rgba(180, 150, 220, 0.35);
   box-shadow: 0 2px 10px rgba(0,0,0,0.3);
   font-size: 1.3rem;
-  opacity: 0.7;
+  opacity: 0.85;
   transition: all 0.25s ease;
   flex-direction: column;
   gap: 2px;
+  position: relative;
+  overflow: hidden;
+}
+/* 星芒背景 */
+.deck-card-back::before {
+  content: '';
+  position: absolute; inset: 8px;
+  border: 1px solid rgba(212,165,116,0.18);
+  border-radius: 4px;
+}
+.deck-card-back::after {
+  content: '✦';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.6rem;
+  color: rgba(212,165,116,0.15);
+  text-shadow: 0 0 8px rgba(212,165,116,0.1);
 }
 .deck-card-back .card-num {
+  position: relative; z-index: 2;
   font-size: 0.5rem;
   color: rgba(200, 180, 220, 0.4);
   font-weight: 400;
   letter-spacing: 0.05em;
+}
+/* 选中态下的背面 */
+.deck-card.selected .deck-card-back::after {
+  color: rgba(212,165,116,0.3);
+  text-shadow: 0 0 12px rgba(212,165,116,0.2);
 }
 .deck-card:hover:not(.picked) .deck-card-back {
   border-color: rgba(212, 165, 116, 0.5);
