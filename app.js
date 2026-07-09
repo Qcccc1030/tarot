@@ -322,6 +322,7 @@ function startDrawPhase() {
         <div class="deck-card-face deck-card-back">✦<span class="card-num">${index + 1}</span></div>
         <div class="deck-card-face deck-card-front">
           <span class="deck-card-name">${card.nameCn}</span>
+          <span class="sep-star">· ✦ ·</span>
           <span class="deck-card-badge ${getTagClass(card)}">${getTagText(card)}</span>
         </div>
       </div>
