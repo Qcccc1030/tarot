@@ -470,7 +470,10 @@ function showResult() {
     const div = document.createElement('div');
     div.className = 'card-result';
     div.innerHTML = `
-      <div class="card-result-mini ${dc.isReversed ? 'reversed-card' : ''}">✦</div>
+      <div class="card-result-mini ${dc.isReversed ? 'reversed-card' : ''}">
+        <span class="crm-icon">${dc.cardData.symbol || '✦'}</span>
+        <span class="crm-tag ${getTagClass(dc.cardData)}">${getTagText(dc.cardData)} ${getRankText(dc.cardData)}</span>
+      </div>
       <div class="card-result-info">
         <div class="card-result-name">${dc.cardData.nameCn} · <small>${posLabel}</small></div>
         <div class="card-result-position">${dc.positionName}</div>

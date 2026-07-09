@@ -454,16 +454,35 @@ body {
 }
 
 .card-result-mini {
-  width: 70px; height: 105px;
+  width: 70px; min-height: 105px;
   flex-shrink: 0;
-  border-radius: 8px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.6rem;
-  background: linear-gradient(135deg, #1a1040, #2d1754);
-  border: 1px solid rgba(180,150,220,0.25);
-  color: #d4a574;
+  border-radius: 10px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 0.2rem;
+  background: linear-gradient(180deg, #1a0e38, #231845, #1a0e38);
+  border: 1.5px solid rgba(180,150,220,0.3);
+  position: relative;
+  overflow: hidden;
+}
+/* 顶线 */
+.card-result-mini::before {
+  content: '';
+  position: absolute; top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 60%; height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(212,165,116,0.5), transparent);
 }
 .card-result-mini.reversed-card { transform: rotate(180deg); }
+.crm-icon {
+  font-size: 1.5rem;
+  filter: drop-shadow(0 0 4px rgba(200,160,100,0.3));
+}
+.crm-tag {
+  font-size: 0.45rem;
+  padding: 0.1em 0.4em;
+  border-radius: 50px;
+  letter-spacing: 0.04em;
+}
 
 .card-result-info { flex: 1; }
 .card-result-name {
