@@ -90,13 +90,6 @@ const safeOn = (id, event, fn) => {
   if (el) el.addEventListener(event, fn);
 };
 safeOn('btn-daily', 'click', startDailyFortune);
-// 访问计数器
-fetch('https://api.countapi.xyz/hit/qcccc1030-tarot/visits')
-  .then(r => r.json()).then(d => {
-    document.getElementById('visit-count').textContent = d.value || 1;
-  }).catch(() => {
-    document.getElementById('visit-count').textContent = '许多';
-  });
 safeOn('btn-shake', 'click', blindDraw);
 safeOn('btn-share', 'click', openShareCard);
 safeOn('btn-download-card', 'click', downloadShareCard);
