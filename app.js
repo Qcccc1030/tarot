@@ -543,7 +543,6 @@ function generateOverall(cards) {
     };
     parts.push(`<p>${suitDetail[dominantSuit[0]]}</p>`);
   }
-  }
 
   // ========== 二、现状分析 ==========
   parts.push('<h4>📋 现状分析</h4>');
