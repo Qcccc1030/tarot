@@ -321,9 +321,9 @@ function startDrawPhase() {
       <div class="deck-card-inner">
         <div class="deck-card-face deck-card-back">✦<span class="card-num">${index + 1}</span></div>
         <div class="deck-card-face deck-card-front">
+          <span class="deck-card-icon">${card.symbol || ''}</span>
+          <span class="deck-card-badge ${getTagClass(card)}">${getTagText(card)} ${getRankText(card)}</span>
           <span class="deck-card-name">${card.nameCn}</span>
-          <span class="sep-star">· ✦ ·</span>
-          <span class="deck-card-badge ${getTagClass(card)}">${getTagText(card)}</span>
         </div>
       </div>
     `;
@@ -664,6 +664,12 @@ function getTagText(card) {
   if (card.type === 'major') return '大牌';
   const map = { wands: '权杖', cups: '圣杯', swords: '宝剑', pentacles: '星币' };
   return map[card.suit] || '';
+}
+function getRankText(card) {
+  if (card.type === 'major') return '';
+  const rank = card.rank || '';
+  const map = { A:'I', 2:'II', 3:'III', 4:'IV', 5:'V', 6:'VI', 7:'VII', 8:'VIII', 9:'IX', 10:'X', P:'侍', Kt:'骑', Q:'后', K:'王' };
+  return map[rank] || '';
 }
 
 function getPositionShort(pos) {

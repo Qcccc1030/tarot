@@ -368,6 +368,7 @@ body {
   width: 70%; height: 2px;
   background: linear-gradient(90deg, transparent, rgba(212,165,116,0.5), transparent);
   border-radius: 0 0 2px 2px;
+  z-index: 2;
 }
 /* 底部装饰条 */
 .deck-card-front::after {
@@ -376,28 +377,34 @@ body {
   transform: translateX(-50%);
   width: 50%; height: 1px;
   background: linear-gradient(90deg, transparent, rgba(180,150,220,0.3), transparent);
+  z-index: 2;
 }
+/* 大符号图标 */
+.deck-card-icon {
+  font-size: 1.6rem;
+  padding-top: 0.3rem;
+  filter: drop-shadow(0 0 4px rgba(200,160,100,0.3));
+  position: relative; z-index: 1;
+}
+/* 类型标签 */
+.deck-card-badge {
+  font-size: 0.45rem;
+  padding: 0.1em 0.5em;
+  border-radius: 50px;
+  letter-spacing: 0.06em;
+  position: relative; z-index: 1;
+}
+/* 牌名 */
 .deck-card-name {
-  font-size: 0.65rem;
+  font-size: 0.6rem;
   font-weight: 500;
   color: #e8d0a0;
   letter-spacing: 0.05em;
   line-height: 1.2;
-  padding: 0.4rem 0.2rem 0;
+  padding: 0.2rem 0.2rem 0.3rem;
+  position: relative; z-index: 1;
 }
-.deck-card-badge {
-  font-size: 0.45rem;
-  padding: 0.15em 0.5em;
-  border-radius: 50px;
-  margin-top: 0.2rem;
-  letter-spacing: 0.06em;
-}
-/* 牌名与标签之间的分隔星 */
-.deck-card-front .sep-star {
-  font-size: 0.4rem;
-  color: rgba(200,160,100,0.4);
-  margin: 0.1rem 0;
-}
+/* 逆位标识 */
 .deck-reversed-badge {
   font-size: 0.45rem;
   color: #fff;
@@ -406,11 +413,12 @@ body {
   border-radius: 50px;
   margin-top: 0.15rem;
   display: inline-block;
+  position: relative; z-index: 1;
 }
 /* 大阿尔卡纳正面高亮 */
-.deck-card .tag-major + .deck-reversed-badge { margin-top: 0.1rem; }
 .deck-card-front:has(.tag-major) {
   border-color: rgba(212,165,116,0.5);
+  background: linear-gradient(180deg, #1e1038 0%, #281d50 50%, #1e1038 100%);
 }
 .deck-card-front:has(.tag-major)::before {
   background: linear-gradient(90deg, transparent, rgba(212,165,116,0.7), transparent);
